@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyCook Recipe Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- EasyCook Header -->
+    <header class="app-header">
+        <div class="header-top">
+            <div class="brand">
+                <h1>🍳 EasyCook</h1>
+                <p>Your everyday recipe companion</p>
+            </div>
+
+            <button id="mealPlanBtn" class="header-button">
+                My Meal Plans
+            </button>
+        </div>
+
+        <div class="header-bottom">
+            <h2>Find something delicious today ♡</h2>
+            <p>Search recipes, discover new meals and plan what to cook.</p>
+        </div>
+    </header>
+
+
+    <!-- Recipe Search -->
+    <div class="section">
+        <h2>Recipe Search</h2>
+        <p>Search for your favourite recipes.</p>
+
+        <input type="text" id="recipeInput"
+               placeholder="Enter recipe name">
+
+        <button id="searchBtn">Search Recipe</button>
+
+        <div id="result"></div>
+    </div>
+
+
+    <!-- Recipe Suggestions -->
+    <div class="section">
+        <h2>🍽️ What Should I Cook Today?</h2>
+        <p>Not sure what to cook? Choose a meal time and get a recipe suggestion!</p>
+
+        <label for="category">Select Meal Time:</label>
+
+        <select id="category">
+            <option value="">Select Meal Time</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+
+        <br><br>
+
+        <button id="suggestBtn">Suggest Recipe</button>
+
+        <div id="suggestion"></div>
+    </div>
+
+
+    <!-- Find Recipes by Ingredient -->
+    <div class="section">
+        <h2>Find Recipes by Ingredient</h2>
+        <p>Find recipes using ingredients you already have.</p>
+
+        <label for="ingredient">Available Ingredient:</label>
+
+        <select id="ingredient">
+            <option value="">Select Ingredient</option>
+            <option value="chicken_breast">Chicken</option>
+            <option value="beef">Beef</option>
+            <option value="salmon">Salmon</option>
+            <option value="egg">Egg</option>
+            <option value="potatoes">Potato</option>
+            <option value="rice">Rice</option>
+        </select>
+
+        <button id="ingredientBtn">Find Recipe</button>
+
+        <p id="ingredientResult"></p>
+    </div>
+
+
+    <!-- Serving Calculator -->
+    <div class="section">
+        <h2>🧮 Serving Calculator</h2>
+        <p>Adjust ingredient amounts based on how many people you want to cook for.</p>
+
+        <p class="calculator-note">
+            Check the ingredient measurements in your recipe.
+            If the recipe does not state how many people it serves,
+            use a serving size that you already know.
+            Do not assume every recipe serves 2 people.
+        </p>
+
+        <label for="originalServings">Original Servings:</label>
+        <input type="number" id="originalServings"
+               min="1" placeholder="e.g. 2">
+
+        <p class="input-help">
+            How many people does the original recipe serve?
+        </p>
+
+        <label for="quantity">Original Ingredient Amount:</label>
+        <input type="number" id="quantity"
+               min="0.01" step="any"
+               placeholder="e.g. 200">
+
+        <br>
+
+        <label for="unit">Unit:</label>
+        <select id="unit">
+            <option value="g">g</option>
+            <option value="ml">ml</option>
+            <option value="pieces">pieces</option>
+            <option value="cups">cups</option>
+        </select>
+
+        <p class="input-help">
+            Example: If a recipe uses 200 g of chicken, enter 200 and select g.
+        </p>
+
+        <label for="newServings">New Servings:</label>
+        <input type="number" id="newServings"
+               min="1" placeholder="e.g. 4">
+
+        <p class="input-help">
+            How many people do you want to cook for?
+        </p>
+
+        <br>
+
+        <button id="calculateBtn">Calculate</button>
+
+        <p id="calculationResult"></p>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
